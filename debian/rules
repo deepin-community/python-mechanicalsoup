@@ -1,4 +1,12 @@
 #!/usr/bin/make -f
 
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export PYBUILD_NAME=mechanicalsoup
+
+# Tests require network access.
+export PYBUILD_DISABLE=test
+
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild

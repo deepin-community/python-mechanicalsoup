@@ -1,5 +1,142 @@
-template-repository (1.0-1) unstable; urgency=medium
+python-mechanicalsoup (1.3.0-2) unstable; urgency=medium
 
-  * Initial release
+  * Team Upload
+  * Allow autopkgtest to print '"POST /post HTTP/1.1" 200' to stderr
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Alexandre Detiste <tchet@debian.org>  Sun, 28 Jan 2024 19:08:18 +0100
+
+python-mechanicalsoup (1.3.0-1) unstable; urgency=medium
+
+  * New upstream version 1.3.0 (Closes: #1041814, #1040429)
+  * add myself as uploader
+  * remove old dependency on python3-six
+  * set Rules-Requires-Root: no
+  * use new dh-sequence-python3
+  * bump Standards-Version to 4.6.2, no further change needed
+  * tests:
+    * delete old patches, not needed anymore
+    * autopkgtest needs python3-pytest-httpbin
+    * disable tests failing likely due to changes on http://httpbin.org/:
+      * new_control
+      * get_request_kwargs
+      * submit_online
+      * submit_set
+
+ -- Alexandre Detiste <tchet@debian.org>  Fri, 05 Jan 2024 11:24:14 +0100
+
+python-mechanicalsoup (0.10.0-6) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on python3-requests and
+      python3-six.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 17 Oct 2022 01:21:49 +0100
+
+python-mechanicalsoup (0.10.0-5) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Thu, 26 May 2022 19:49:21 +0100
+
+python-mechanicalsoup (0.10.0-4) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Team upload.
+  * Bump Standards-Version to 4.4.1.
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+  * Fix compatibility with pytest 6 (Closes: #979298).
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository, Repository-Browse.
+  * Wrap long lines in changelog entries: 0.10.0-2.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository.
+  * Update standards version to 4.5.0, no changes needed.
+
+ -- Ondřej Nový <onovy@debian.org>  Sun, 17 Jan 2021 18:24:31 +0100
+
+python-mechanicalsoup (0.10.0-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Drop Python 2 support.
+  * Bump debhelper compat level to 12.
+  * Bump standards version to 4.4.0 (no changes).
+
+  [ Andrey Rahmatullin ]
+  * Add patches from Ubuntu to fix test failures (Closes: #922833).
+
+ -- Andrey Rahmatullin <wrar@debian.org>  Fri, 16 Aug 2019 00:21:39 +0500
+
+python-mechanicalsoup (0.10.0-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+
+  [ Gianfranco Costamagna ]
+  * Team upload
+  * Add upstream patch to fix autopkgtest regression due to httpbin changing its
+    html code (Closes: #901865)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 22 Jun 2018 19:06:49 +0200
+
+python-mechanicalsoup (0.10.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Ghislain Antony Vaillant ]
+  * New upstream version 0.10.0 (Closes: #883366)
+  * Refresh the patch queue
+  * Update the copyright years
+  * Drop the get-orig-source target
+  * Normalize the package descriptions
+  * Bump the debhelper version to 11
+  * Bump the standards version to 4.1.3
+  * Explicitly disable testing at build time.
+    Reason: Tests require network access
+  * Add pytest-mock to the autopkgtest Depends
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Thu, 15 Feb 2018 16:18:55 +0000
+
+python-mechanicalsoup (0.8.0-1) unstable; urgency=medium
+
+  * Add recommended get-orig-source target
+  * New upstream version 0.8.0
+  * Bump the minimum Python versions to 2.7 and 3.4
+  * Fixup the Vcs-Browser URI
+  * Bump the standards version to 4.1.1
+  * Avoid dependency on pytest-runner
+    - New patch No-pytest-runner.patch
+  * Move extend-diff-ignore to d/s/options
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 10 Oct 2017 14:27:05 +0100
+
+python-mechanicalsoup (0.7.0-1) unstable; urgency=medium
+
+  * Swith from git-dpm to gbp
+    - Drop git-dpm configuration
+    - Add gbp configuration
+  * Fix typo in watch regex
+  * Fixup Vcs-Browser URI
+  * New upstream version 0.7.0
+  * Bump minimum Py3 version to 3.3
+  * Exclude egg-info directory via extend-diff-ignore
+  * Add DEP-8 tests, drop superfluous Testsuite field
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 16 May 2017 14:47:03 +0100
+
+python-mechanicalsoup (0.6.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #849475)
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 27 Dec 2016 17:47:39 +0000
